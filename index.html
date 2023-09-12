@@ -14,57 +14,56 @@
 <h1>Weather Dashboard</h1>
   </header>
   <!--Search Bar -->
-  <div>
+  <div id="searchBox">
 <h2>Search for a City</h2>
-<form>
+<form id="info-form">
   <input id="city" type="text" placeholder="Type City Here"/>
   <button type="submit" id="btn">Search</button>
 </form>
-<div> <!--Search Results-->
-</div>
+<ol class="pastSeatch"> <!--Search Results-->
+</ol>
 </div>
 
-<section> <!--Results from search will show here-->
+<section id="results"> <!--Results from search will show here-->
 <h2>City Name + Date</h2>
-<div> <!--Weather details-->
+ <!--Weather details-->
 <h3>Temp:</h3>
 <h3>Wind:</h3>
 <h3>Humidity:</h3>
-</div>
 </section>
 
-<div> <!--Weekly Forecast shown here-->
+<div id="mainCast" > <!--Weekly Forecast shown here-->
 <h2>5-Day Forecast</h2>
-<div> <!--5 cards divs, each showing the forecast for future days-->
-<div>
-  <h3>Day1</h3>
+<div id="forecast"> <!--5 cards divs, each showing the forecast for future days-->
+<div class="dayBox">
+  <h3 >Day1</h3>
   <div>icon here</div>
   <p>Temp:</p>
 <p>Wind:</p>
 <p>Humidity:</p>
 </div>
-<div>
+<div class="dayBox">
   <h3>Day2</h3>
   <div>icon here</div>
   <p>Temp:</p>
 <p>Wind:</p>
 <p>Humidity:</p>
 </div>
-<div>
+<div class="dayBox">
   <h3>Day3</h3>
   <div>icon here</div>
   <p>Temp:</p>
 <p>Wind:</p>
 <p>Humidity:</p>
 </div>
-<div>
-  <h3>Day4</h3>
+<div class="dayBox">
+  <h3 >Day4</h3>
   <div>icon here</div>
   <p>Temp:</p>
 <p>Wind:</p>
 <p>Humidity:</p>
 </div>
-<div>
+<div class="dayBox">
   <h3>Day5</h3>
   <div>icon here</div>
   <p>Temp:</p>
