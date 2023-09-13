@@ -2,6 +2,9 @@ var cityInput=$("#city");
 var searchList=$("#pastSearch");
 var submitEl=$("#btn");
 var cityForm=$('#info-form');
+
+var today=dayjs();
+$('#theDate').text(today.format('(MM/D/YYYY)'));
 //event to add city search to log of past searches//
 submitEl.addEventListener("click",function(event)
 { event.preventDefault();
