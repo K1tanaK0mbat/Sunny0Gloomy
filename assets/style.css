@@ -43,11 +43,14 @@ border-width: 1px;
     border-style: solid;
     border-color:rgb(21, 26, 39);
     border-width: 5px;
+    padding:100px;
+    padding-bottom: 200px;
 }
 #searchBox{
 display: flex;
 flex-direction: column;
 float: left;
+margin-right: 50px;
 
 }
 
@@ -68,4 +71,5 @@ li {
     background-color: rgba(135, 135, 135, 0.982);
     padding: 15px;
     text-align: center;
+    color: black;
 }
