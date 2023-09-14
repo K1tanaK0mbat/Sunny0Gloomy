@@ -77,6 +77,9 @@ function searchHistory() {
         $("#Temp").text("Temperature: " + data.main.temp + "°F"); // Display temperature in Fahrenheit
         $("#Wind").text("Wind: " + data.wind.speed + " m/s");
         $("#Humidity").text("Humidity: " + data.main.humidity + "%");
+        var iconCode = data.weather[0].icon;
+        var iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
+        $("#today").attr("src", iconUrl);
       })
       .catch(function (error) {
         console.error("Fetch error:", error);
@@ -98,11 +101,15 @@ function searchHistory() {
             var temperature = forecast.main.temp + "°F"; 
             var wind = forecast.wind.speed + " m/s";
             var humidity = forecast.main.humidity + "%";
-    
+
             $(".dayBox h3")[i].textContent = date;
             $(".dayBox p.temp")[i].textContent = "Temp: " + temperature;
             $(".dayBox p.wind")[i].textContent = "Wind: " + wind;
             $(".dayBox p.humidity")[i].textContent = "Humidity: " + humidity;
+            var iconCode = forecast.weather[0].icon;
+      var iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
+      $("#icon-" + (i + 1)).attr("src", iconUrl); 
+
             currentDate = currentDate.add(1, "day");
         }
       })
