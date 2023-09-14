@@ -91,16 +91,17 @@ function searchHistory() {
       })
       .then(function (data) {
         for (var i = 0; i < 5; i++) {
-          var forecast = data.list[i];
-          var date = dayjs.unix(forecast.dt).format("MM/DD/YYYY");
-          var temperature = forecast.main.temp + "°F"; 
-          var wind = forecast.wind.speed + " m/s";
-          var humidity = forecast.main.humidity + "%";
-  
-          $(".dayBox h3")[i].textContent = date;
-          $(".dayBox p:nth-child(1)")[i].textContent = "Temp: " + temperature;
-          $(".dayBox p:nth-child(2)")[i].textContent = "Wind: " + wind;
-          $(".dayBox p:nth-child(3)")[i].textContent = "Humidity: " + humidity;
+            var forecast = data.list[i]
+    
+            var date = dayjs.unix(forecast.dt).format("MM/DD/YYYY");
+            var temperature = forecast.main.temp + "°F"; 
+            var wind = forecast.wind.speed + " m/s";
+            var humidity = forecast.main.humidity + "%";
+    
+            $(".dayBox h3")[i].textContent = date;
+            $(".dayBox p.temp")[i].textContent = "Temp: " + temperature;
+            $(".dayBox p.wind")[i].textContent = "Wind: " + wind;
+            $(".dayBox p.humidity")[i].textContent = "Humidity: " + humidity;
         }
       })
       .catch(function (error) {
