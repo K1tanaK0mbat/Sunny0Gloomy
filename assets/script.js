@@ -9,8 +9,8 @@ $('#theDate').text(today.format('(MM/D/YYYY)'));
 submitEl.on("click",function(event)
 { event.preventDefault();
 
-    var pastCity=cityInput.val().trim();
-    if (pastCity === "") {
+    var City=cityInput.val().trim();
+    if (City === "") {
         return; 
       }
     var searches=getHistory();
@@ -18,10 +18,11 @@ submitEl.on("click",function(event)
         searches.pop();
       }
 
-searches.unshift(pastCity);
+searches.unshift(City);
     saveHistory(searches)
    searchHistory(); 
 cityInput.val("");
+fetchWeather(City);
     
 });
 
@@ -57,3 +58,53 @@ function searchHistory() {
   }
 
   searchHistory();
+
+  //Api code here
+  function fetchWeather(cityName) {
+    var apiKey = "747e07490e1714a9a86962e40ddbb776";
+    var todayWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`; 
+    var futureUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial`;
+  
+    fetch(todayWeatherUrl)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Weather could not be fetched");
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        $("#results h2").text(data.name + " " + today.format("(MM/D/YYYY)"));
+        $("#Temp").text("Temperature: " + data.main.temp + "°F"); // Display temperature in Fahrenheit
+        $("#Wind").text("Wind: " + data.wind.speed + " m/s");
+        $("#Humidity").text("Humidity: " + data.main.humidity + "%");
+      })
+      .catch(function (error) {
+        console.error("Fetch error:", error);
+      });
+
+    fetch(futureUrl)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Forecast could not be fetched");
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < 5; i++) {
+          var forecast = data.list[i];
+          var date = dayjs.unix(forecast.dt).format("MM/DD/YYYY");
+          var temperature = forecast.main.temp + "°F"; 
+          var wind = forecast.wind.speed + " m/s";
+          var humidity = forecast.main.humidity + "%";
+  
+          $(".dayBox h3")[i].textContent = date;
+          $(".dayBox p:nth-child(1)")[i].textContent = "Temp: " + temperature;
+          $(".dayBox p:nth-child(2)")[i].textContent = "Wind: " + wind;
+          $(".dayBox p:nth-child(3)")[i].textContent = "Humidity: " + humidity;
+        }
+      })
+      .catch(function (error) {
+        console.error("Fetch error:", error);
+      });
+  }
+  
