@@ -61,9 +61,8 @@ function searchHistory() {
 
   //Api code here
   function fetchWeather(cityName) {
-    var apiKey = "747e07490e1714a9a86962e40ddbb776";
-    var todayWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`; 
-    var futureUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=imperial`;
+    var todayWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=116053534c6ed930fa5e26b339b976b7&units=imperial`; 
+    var futureUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=116053534c6ed930fa5e26b339b976b7&units=imperial`;
   
     fetch(todayWeatherUrl)
       .then(function (response) {
