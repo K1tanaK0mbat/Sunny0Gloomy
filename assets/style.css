@@ -1,3 +1,17 @@
+
+:root {
+    --leng:270px;
+    --tall:30px;
+}
+h2{
+    font-size: 27px;
+}
+h3{
+    font-size: 22px;
+}
+p{
+    font-size: 16px;
+}
 h1 {
     text-align: center;
     color:white;
@@ -10,49 +24,60 @@ h1 {
     color:white;
     margin:10px;
     text-align: left;
-  
+  width: 170px;
+  height: 220px;
+  padding: 11px;
 }
 
 #results{
     border-style: solid;
     display:flex;
+
     flex-direction: column;
+    padding: 5px;
+}
+img {
+    width: 36px;
+    height: 36px;
 }
 
 #btn{
 background-color: rgb(69, 115, 207);
 color: aliceblue;
-padding:5px;
-
+width: var(--leng);
+height: var(--tall);
+border-radius: 6px;
 }
 #city{
-    padding:10px;
-    margin:12px;
+    width:var(--leng);
+    margin-bottom: 9px;
+    height: var(--tall);
+    border-radius: 6px;
 }
 #info-form{
-    
-    padding:15px;
+    padding-bottom:10px;
 border-bottom-style: solid;
 border-width: 1px;
     display: flex;
   flex-direction: column ;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-left: 10px;
 }
 #pastSearch{
-    padding:20px;
+    padding-left:10px;
 }
 #searchBox{
 display: flex;
 flex-direction: column;
 float: left;
-margin-right: 50px;
+margin-right: 30px;
 
 }
 
 #forecast{
-display:inline-flex;
+display:flex;
 flex-direction: row;
-
+align-items: baseline;
 }
 
 #mainCast{
@@ -64,11 +89,12 @@ justify-content: start;
 
 li {
     background-color: rgba(155, 151, 151, 0.982);
-    width: 220px;
-padding:8px;
+    width: var(--leng);
+padding:4px;
 border-radius: 8px;
     text-align: center;
  list-style: none;
- margin: 10px;
+ margin-bottom: 8px;
     color: black;
+    height: var(--tall);
 }
