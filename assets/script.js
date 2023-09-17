@@ -45,6 +45,7 @@ function searchHistory() {
     var selectedCity = $(this).text();
     cityInput.val(selectedCity); 
     fetchWeather(selectedCity); 
+    
   });
 
   function getHistory() {
