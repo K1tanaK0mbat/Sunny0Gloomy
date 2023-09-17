@@ -9,9 +9,8 @@ h1 {
     background-color: rgb(43, 56, 87);
     color:white;
     margin:10px;
-    padding:10px;
-
     text-align: left;
+  
 }
 
 #results{
@@ -40,11 +39,7 @@ border-width: 1px;
   justify-content: space-evenly;
 }
 #pastSearch{
-    border-style: solid;
-    border-color:rgb(21, 26, 39);
-    border-width: 5px;
-    padding:100px;
-    padding-bottom: 200px;
+    padding:20px;
 }
 #searchBox{
 display: flex;
@@ -68,8 +63,12 @@ justify-content: start;
 }
 
 li {
-    background-color: rgba(135, 135, 135, 0.982);
-    padding: 15px;
+    background-color: rgba(155, 151, 151, 0.982);
+    width: 220px;
+padding:8px;
+border-radius: 8px;
     text-align: center;
+ list-style: none;
+ margin: 10px;
     color: black;
 }

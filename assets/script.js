@@ -39,9 +39,14 @@ function searchHistory() {
       li.attr("data-index", i);
       searchList.append(li);
     }
-  }
+  };
 
- 
+  searchList.on("click", "li", function () {
+    var selectedCity = $(this).text();
+    cityInput.val(selectedCity); 
+    fetchWeather(selectedCity); 
+  });
+
   function getHistory() {
     var searches = localStorage.getItem("searches");
     if (searches) {
